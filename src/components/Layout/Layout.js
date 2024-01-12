@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 
 // Import Components for App
-
+import DropDown from "../DopDown/Dropdown"
 // Import GlobalStyles and styles from styled-components files
 import * as S from "./LayoutStyled"
 
@@ -28,6 +28,7 @@ const Layout = ({ children }) => {
 
 	return (
 		<S.AppWrapper>
+			<DropDown />
 			<S.PageContainer>{children}</S.PageContainer>
 		</S.AppWrapper>
 	)
