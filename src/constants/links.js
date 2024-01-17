@@ -9,7 +9,7 @@ export const linksMenu = [
 	},
 	{
 		label: "Services",
-		submenu: [
+		subMenu: [
 			{
 				label: "Plâtre",
 				path: "/services/platre/",
@@ -25,6 +25,16 @@ export const linksMenu = [
 			{
 				label: "Décoration",
 				path: "/services/decoration/",
+				subMenu: [
+					{
+						label: "subitem1",
+						path: "/subitem1",
+					},
+					{
+						label: "subitem2",
+						path: "subitem2",
+					},
+				],
 			},
 			{
 				label: "Giclage",

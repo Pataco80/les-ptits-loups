@@ -18,6 +18,7 @@
 		"production": "gatsby clean && gatsby build && gatsby serve"
 	},
 	"dependencies": {
+		"@fontsource/chelsea-market": "^5.0.8",
 		"babel-plugin-styled-components": "^2.1.4",
 		"gatsby": "^4.25.8",
 		"gatsby-plugin-image": "^2.25.0",

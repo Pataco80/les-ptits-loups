@@ -15,4 +15,211 @@
 .logo h1 {
 	color: #fff;
 	text-transform: uppercase;
+	margin-bottom: 0;
+}
+
+.menu_bar,
+.close_menu {
+	display: none;
+}
+
+.wrapper .navigation {
+	display: flex;
+	align-items: center;
+	background-color: #3a3a3a;
+	list-style: none;
+}
+
+.navigation li {
+	display: flex;
+	gap: 0.3rem;
+	padding: 0.5rem;
+	cursor: pointer;
+	position: relative;
+}
+
+.navigation li a {
+	font-family: "Chelsea Market";
+	color: #fff;
+	text-decoration: none;
+}
+
+.navigation li:hover {
+	background-color: #d11111;
+}
+
+.navigation .nav_menu {
+	display: flex;
+	align-items: center;
+	gap: 0.3rem;
+	padding: 0 0.5rem;
+}
+
+/* Sub Menu component */
+
+.navigation .menu {
+	position: absolute;
+	width: max-content;
+	left: 0;
+	right: 0;
+	top: 100%;
+	background-color: #3a3a3a;
+	transform: translateY(-10px);
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+}
+
+.navigation .menu_list:hover .menu {
+	transform: translateY(0);
+	top: 100%;
+	visibility: visible;
+	opacity: 1;
+}
+
+.menu .sub_menu {
+	position: absolute;
+	right: 100%;
+	top: 0;
+	background-color: #3a3a3a;
+	transform: translateY(-10px);
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+}
+
+.menu .menu_list:hover .sub_menu {
+	transform: translateY(0);
+	visibility: visible;
+	opacity: 1;
+}
+
+.menu .menu_list,
+.sub_menu li {
+	border-top: 2px solid #363636;
+	display: flex;
+	gap: 0.3rem;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+}
+
+.menu .menu_list,
+.sub_menu li:first-child {
+	border: none;
+}
+
+.icon_left {
+	display: flex;
+}
+.icon_down {
+	display: none;
+}
+
+/* Responsive */
+
+@media (max-width: 999px) {
+	.header .wrapper {
+		width: 90%;
+	}
+}
+
+@media (max-width: 820px) {
+	.menu_bar,
+	.close_menu {
+		display: flex;
+		align-self: end;
+	}
+
+	.close_menu {
+		padding: 1rem;
+	}
+
+	.wrapper .navigation {
+		position: fixed;
+		flex-direction: column;
+		align-items: flex-start;
+		left: 0;
+		top: 0;
+		width: 80%;
+		height: 100vh;
+		overflow: hidden;
+		transform: translateX(-100%);
+		transition: all 0.4s ease-in-out;
+	}
+
+	.wrapper .navigation.active {
+		transform: translateX(0);
+	}
+
+	.shadow {
+		position: fixed;
+		inset: 0;
+		background-color: #1414148a;
+		visibility: hidden;
+		opacity: none;
+		transition: all 0.4s ease-in-out;
+	}
+
+	.shadow.active {
+		visibility: visible;
+	}
+
+	.navigation li {
+		border-top: 2px solid #222222;
+		width: 100%;
+		align-items: center;
+	}
+
+	.navigation li:hover {
+		background-color: #323232;
+	}
+
+	.menu_list {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.navigation li a {
+		display: inline-block;
+		padding: 0.5rem 1rem;
+	}
+
+	.navigation .menu {
+		position: relative;
+		top: 0;
+		right: 0;
+		display: none;
+	}
+
+	.navigation .menu_list:hover .menu {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		top: 0;
+		width: auto;
+	}
+
+	.menu .sub_menu {
+		position: relative;
+		right: 0%;
+		top: 0;
+		display: none;
+	}
+
+	.menu .menu_list:hover .sub_menu {
+		display: block;
+	}
+
+	.icon_left {
+		display: none;
+	}
+	.icon_down {
+		display: flex;
+	}
+}
+
+@media (max-width: 600px) {
+	.wrapper .navigation {
+		width: 100%;
+	}
 }

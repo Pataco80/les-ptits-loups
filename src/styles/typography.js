@@ -2,8 +2,8 @@ import { css } from "styled-components"
 import { setColor, setLetterSpacing } from "./utils"
 
 export const fontFamilly = {
-	titleFont: "Arial",
-	bodyFont: "Roboto",
+	titleFont: "Chelsea Market",
+	bodyFont: "Open Sans",
 	defaultFonts: `"system",
   "-apple-system",
   ".SFNSText-Regular",

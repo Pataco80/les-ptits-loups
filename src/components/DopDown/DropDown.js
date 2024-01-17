@@ -1,29 +1,43 @@
-import React from "react"
+import React, { useState } from "react"
 import "./dropdown.css"
 import { linksMenu } from "../../constants/links"
 import { Link } from "gatsby"
-import { KeyboardArrowDown } from "@styled-icons/material/KeyboardArrowDown"
+import { KeyboardArrowDown, Menu, Close } from "@styled-icons/material/"
+import SubMenu from "../SubMenu/SubMenu"
 const DropDown = () => {
+	const [openMenu, setOpenMenu] = useState(false)
+	console.log(linksMenu)
 	return (
 		<header className='header'>
 			<div className='wrapper'>
 				<div className='logo'>
 					<h1 className='h4'>Logo</h1>
 				</div>
-				<ul className='navigation'>
+				<span
+					className={`shadow ${openMenu && "active"}`}
+					onClick={() => setOpenMenu(false)}
+				/>
+				<ul className={`navigation ${openMenu && "active"}`}>
+					<span className='close_menu' onClick={() => setOpenMenu(false)}>
+						<Close size={24} />
+					</span>
 					{linksMenu.map((menu, i) => (
-						<li key={i} className='list_menu'>
+						<li key={i} className='menu_list'>
 							<div className='nav_menu'>
 								<Link to={menu.path}>{menu.label}</Link>
-								{menu.submenu && (
+								{menu.subMenu && (
 									<span>
-										<KeyboardArrowDown size={16} />
+										<KeyboardArrowDown size={24} />
 									</span>
 								)}
 							</div>
+							{menu.subMenu && <SubMenu menu={menu} className='menu' />}
 						</li>
 					))}
 				</ul>
+				<span className='menu_bar' onClick={() => setOpenMenu(true)}>
+					<Menu size={36} />
+				</span>
 			</div>
 		</header>
 	)

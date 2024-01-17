@@ -1,4 +1,5 @@
 import GlobalStyle from "./src/styles/globalStyles"
+import "@fontsource/chelsea-market" // Defaults to weight 400
 
 const React = require("react")
 const Layout = require("./src/components/Layout/Layout").default
