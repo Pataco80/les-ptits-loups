@@ -23,14 +23,15 @@ const DropDown = () => {
 					</span>
 					{linksMenu.map((menu, i) => (
 						<li key={i} className='menu_list'>
-							<div className='nav_menu'>
-								<Link to={menu.path}>{menu.label}</Link>
+							<Link to={menu.path}>
+								{menu.label}
 								{menu.subMenu && (
 									<span>
 										<KeyboardArrowDown size={24} />
 									</span>
 								)}
-							</div>
+							</Link>
+
 							{menu.subMenu && <SubMenu menu={menu} className='menu' />}
 						</li>
 					))}

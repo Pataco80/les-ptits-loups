@@ -8,19 +8,20 @@ const SubMenu = ({ className, menu }) => {
 		<ul className={`${className}`}>
 			{menu.subMenu.map((sub, i) => (
 				<li key={i} className='menu_list'>
-					<div className='nav_menu'>
+					<Link to={sub.path}>
 						{sub.subMenu && (
 							<span className='icon_left'>
 								<KeyboardArrowLeft size={24} />
 							</span>
 						)}
-						<Link to={sub.path}>{sub.label}</Link>
+						{sub.label}
 						{sub.subMenu && (
 							<span className='icon_down'>
 								<KeyboardArrowDown size={24} />
 							</span>
 						)}
-					</div>
+					</Link>
+
 					{sub.subMenu && (
 						<>
 							<ul className='sub_menu'>

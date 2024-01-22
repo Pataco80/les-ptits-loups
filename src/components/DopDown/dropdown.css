@@ -33,15 +33,17 @@
 .navigation li {
 	display: flex;
 	gap: 0.3rem;
-	padding: 0.5rem;
+	padding: 0.5rem 1rem;
 	cursor: pointer;
 	position: relative;
 }
 
 .navigation li a {
+	display: flex;
 	font-family: "Chelsea Market";
 	color: #fff;
 	text-decoration: none;
+	gap: 0.3rem;
 }
 
 .navigation li:hover {
@@ -108,9 +110,6 @@
 	border: none;
 }
 
-.icon_left {
-	display: flex;
-}
 .icon_down {
 	display: none;
 }
