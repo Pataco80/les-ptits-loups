@@ -8,43 +8,29 @@ export const linksMenu = [
 		path: "/about/",
 	},
 	{
-		label: "Services",
+		label: "La Structure",
 		subMenu: [
 			{
-				label: "Plâtre",
-				path: "/services/platre/",
+				label: "La Nurserie",
+				path: "/space/nursery/",
 			},
 			{
-				label: "Peinture",
-				path: "/services/peinture/",
+				label: "Les Trotteurs",
+				path: "/space/trotters/",
 			},
 			{
-				label: "Papier-Peint",
-				path: "/services/papier-peint/",
+				label: "Les Grands",
+				path: "/space/childs/",
 			},
 			{
-				label: "Décoration",
-				path: "/services/decoration/",
-				subMenu: [
-					{
-						label: "subitem1",
-						path: "/subitem1",
-					},
-					{
-						label: "subitem2",
-						path: "subitem2",
-					},
-				],
-			},
-			{
-				label: "Giclage",
-				path: "/services/giclage/",
+				label: "Autres Espaces",
+				path: "/space/other-spaces/",
 			},
 		],
 	},
 	{
-		label: "Nos Travaux",
-		path: "/works/",
+		label: "Horaires & Tarifs",
+		path: "/cloock-and-prices/",
 	},
 	{
 		label: "Contact",
