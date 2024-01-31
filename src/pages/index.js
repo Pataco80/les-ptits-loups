@@ -1,9 +1,13 @@
 import * as React from "react"
 
+import {
+	Section,
+	SectionContentCenter,
+} from "../components/StyledElements/SectionStyled"
+
 const pageStyles = {
 	color: "#232129",
 	padding: 96,
-	fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
 const headingStyles = {
 	marginTop: 0,
@@ -38,6 +42,9 @@ const IndexPage = () => {
 				Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
 				update in real-time. 😎
 			</p>
+			<Section>
+				<SectionContentCenter>items</SectionContentCenter>
+			</Section>
 		</main>
 	)
 }

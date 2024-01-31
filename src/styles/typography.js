@@ -3,7 +3,7 @@ import { setColor, setLetterSpacing } from "./utils"
 
 export const fontFamilly = {
 	titleFont: "Chelsea Market",
-	bodyFont: "Open Sans",
+	bodyFont: "Comic Sans MS",
 	defaultFonts: `"system",
   "-apple-system",
   ".SFNSText-Regular",
