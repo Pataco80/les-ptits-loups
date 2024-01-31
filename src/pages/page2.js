@@ -1,9 +1,10 @@
 import * as React from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-import { Section } from "../components/StyledElements/SectionStyled"
-import Title from "../components/Title/Title"
-import ServiceList from "../components/ServicesList/ServiceList"
+import {
+	Section,
+	SectionContentCenter,
+} from "../components/StyledElements/SectionStyled"
 
 const pageStyles = {
 	color: "#232129",
@@ -28,7 +29,7 @@ const codeStyles = {
 	borderRadius: 4,
 }
 
-const IndexPage = () => {
+const TwoPage = () => {
 	return (
 		<main style={pageStyles}>
 			<h1 style={headingStyles}>
@@ -43,16 +44,16 @@ const IndexPage = () => {
 				update in real-time. 😎
 			</p>
 			<Section>
-				<Title tag='h2' title='Notre Structure' />
-				<ServiceList />
-				<AniLink fade to='/page2'>
-					Go to Page 2
-				</AniLink>
+				<SectionContentCenter>
+					<AniLink fade to='/'>
+						index
+					</AniLink>
+				</SectionContentCenter>
 			</Section>
 		</main>
 	)
 }
 
-export default IndexPage
+export default TwoPage
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => <title>two Page</title>
