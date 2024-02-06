@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 
 // Import Components for App
-import DropDown from "../DopDown/Dropdown"
+import DropDown from "../DopDown/DropDown"
 // Import GlobalStyles and styles from styled-components files
 import * as S from "./LayoutStyled"
 
