@@ -36,31 +36,31 @@ ${reset};
 	.h1 {
 		font-size: ${typeScale.fontSize3Xl};
 		line-height: ${typeScale.line3Xl};
+    margin-bottom: ${spaceScale.spaceLupXl};
 	}
 	h2,
 	.h2 {
 		font-size: ${typeScale.fontSize2Xl};
 		line-height: ${typeScale.line2Xl};
-    margin-bottom: ${spaceScale.spaceXlUp2xl};
+    margin-bottom: ${spaceScale.spaceMupL};
 	}
 	h3,
 	.h3 {
 		font-size: ${typeScale.fontSizeXl};
 		line-height: ${typeScale.lineXl};
-    margin-bottom: ${spaceScale.spaceLupXl};
+    margin-bottom: ${spaceScale.spaceSupM};
 	}
 	h4,
 	.h4 {
 		font-size: ${typeScale.fontSizeL};
 		line-height: ${typeScale.lineL};
-    margin-bottom: ${spaceScale.spaceMupL};
+    margin-bottom: ${spaceScale.spaceSupM};
 	}
 	h5,
 	.h5 {
 		font-size: ${typeScale.fontSizeM};
 		line-height: ${typeScale.lineM};
-        margin-bottom: ${spaceScale.spaceSupM};
-
+    margin-bottom: ${spaceScale.spaceSupM};
 	}
 	h6,
 	.h6 {
