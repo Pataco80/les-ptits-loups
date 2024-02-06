@@ -12,19 +12,19 @@ export const linksMenu = [
 		subMenu: [
 			{
 				label: "La Nurserie",
-				path: "/space/nursery/",
+				path: "/structure/nursery/",
 			},
 			{
 				label: "Les Trotteurs",
-				path: "/space/trotters/",
+				path: "/structure/trotters/",
 			},
 			{
 				label: "Les Grands",
-				path: "/space/childs/",
+				path: "/structure/childs/",
 			},
 			{
-				label: "Autres Espaces",
-				path: "/space/other-spaces/",
+				label: "Autres espaces",
+				path: "/structure/other-spaces/",
 			},
 		],
 	},

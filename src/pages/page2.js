@@ -1,5 +1,5 @@
 import * as React from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import { graphql } from "gatsby"
 
 import {
 	Section,
@@ -29,7 +29,18 @@ const codeStyles = {
 	borderRadius: 4,
 }
 
-const TwoPage = () => {
+const TwoPage = ({ data }) => {
+	//console.log(data)
+	const tableauInit = data.nurseryMoth.nodes
+	//console.log(tableauInit)
+	let myArray = []
+	for (let i = 0; i < tableauInit.length; i++) {
+		console.log(tableauInit[i].data.fullDay)
+		myArray.push(tableauInit[i].data.fullDay)
+	}
+	console.log("myArray: " + myArray)
+	//const myArray = new Array(tableauInit.data)
+	//console.log(myArray)
 	return (
 		<main style={pageStyles}>
 			<h1 style={headingStyles}>
@@ -44,15 +55,31 @@ const TwoPage = () => {
 				update in real-time. 😎
 			</p>
 			<Section>
-				<SectionContentCenter>
-					<AniLink fade to='/'>
-						index
-					</AniLink>
-				</SectionContentCenter>
+				<SectionContentCenter></SectionContentCenter>
 			</Section>
 		</main>
 	)
 }
+
+export const query = graphql`
+	query {
+		nurseryMoth: allAirtable(
+			filter: { table: { eq: "Nursery-Moth" } }
+			sort: { order: ASC, fields: id }
+		) {
+			nodes {
+				data {
+					days_week
+					fullDay
+					morningWithMeal
+					morningWithoutMeal
+					afternoonWithMeal
+					afternoonWithoutMeal
+				}
+			}
+		}
+	}
+`
 
 export default TwoPage
 
