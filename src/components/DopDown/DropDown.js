@@ -6,7 +6,7 @@ import { KeyboardArrowDown, Menu, Close } from "@styled-icons/material/"
 import SubMenu from "../SubMenu/SubMenu"
 const DropDown = () => {
 	const [openMenu, setOpenMenu] = useState(false)
-	console.log(linksMenu)
+	console.log(openMenu)
 	return (
 		<header className='header'>
 			<div className='wrapper'>
@@ -23,7 +23,7 @@ const DropDown = () => {
 					</span>
 					{linksMenu.map((menu, i) => (
 						<li key={i} className='menu_list'>
-							<Link to={menu.path}>
+							<Link to={menu.path} onClick={() => setOpenMenu(false)}>
 								{menu.label}
 								{menu.subMenu && (
 									<span>
@@ -32,7 +32,9 @@ const DropDown = () => {
 								)}
 							</Link>
 
-							{menu.subMenu && <SubMenu menu={menu} className='menu' />}
+							{menu.subMenu && (
+								<SubMenu menu={menu} className='menu' openMenu={setOpenMenu} />
+							)}
 						</li>
 					))}
 				</ul>

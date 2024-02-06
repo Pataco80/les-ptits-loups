@@ -46,7 +46,8 @@
 	gap: 0.3rem;
 }
 
-.navigation li:hover {
+.navigation li:hover,
+.navigation li a[aria-current] {
 	background-color: #d11111;
 }
 
@@ -179,8 +180,10 @@
 	}
 
 	.navigation li a {
-		display: inline-block;
+		display: flex;
+		justify-content: center;
 		padding: 0.5rem 1rem;
+		width: 100%;
 	}
 
 	.navigation .menu {
@@ -195,7 +198,7 @@
 		flex-direction: column;
 		position: relative;
 		top: 0;
-		width: auto;
+		width: 100%;
 	}
 
 	.menu .sub_menu {
