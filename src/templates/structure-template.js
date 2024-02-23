@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useRef, useEffect } from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image"
-import Layout from "../components/layout"
 import Lightbox from "yet-another-react-lightbox"
 import Captions from "yet-another-react-lightbox/plugins/captions"
 import Share from "yet-another-react-lightbox/plugins/share"
@@ -35,7 +34,7 @@ const StructureTemplate = ({ data }) => {
 	const { structureName, structureSlug } = data.structure.data
 	const imageNodes = data.structure.data.Gallery
 	console.log("imageNodes: " + imageNodes)
-	const slides = imageNodes.map((node) => {
+	const slides = imageNodes?.map((node) => {
 		console.log(
 			node.data.galleryImage.localFiles[0].childImageSharp.original.src
 		)
@@ -54,7 +53,7 @@ const StructureTemplate = ({ data }) => {
 	}, [])
 
 	const getItems = useCallback(() => {
-		return imageNodes.map((image) => {
+		return imageNodes?.map((image) => {
 			return (
 				<div
 					key={image}
@@ -77,48 +76,46 @@ const StructureTemplate = ({ data }) => {
 
 	return (
 		<>
-			<Layout>
-				<Lightbox
-					open={index >= 0}
-					index={index}
-					close={() => setIndex(-1)}
-					slides={slides}
-					plugins={[Captions, Thumbnails, Share]}
-				/>
-				<div>
-					<h2>{structureName}</h2>
-					<p>{structureSlug}</p>
-					<div className='tile is-vertical'>
-						{imageNodes.map((image, index) => {
-							console.log("image: " + image)
-							return (
-								<div
-									className='tile is-parent'
-									onClick={(event) => setIndex(index)}
-									onKeyDown={(event) => setIndex(index)}>
-									<GatsbyImage
-										alt={image.data.galleryImageLegend}
-										image={getImage(image.data.galleryImage.localFiles[0])}
-									/>
-									<p>{image.data.galleryImageLegend}</p>
-								</div>
-							)
-						})}
-					</div>
-					<hr />
-					<div>
-						<h4>LightGallery</h4>
-						<LightGallery
-							plugins={[lgShare, lgThumbnail, lgHash, lgZoom]}
-							elementClassNames='custom-class-name'
-							onInit={onInit}>
-							{getItems()}
-						</LightGallery>
-					</div>
-					<hr />
-					<pre>{JSON.stringify(data, null, 2)}</pre>
+			<Lightbox
+				open={index >= 0}
+				index={index}
+				close={() => setIndex(-1)}
+				slides={slides}
+				plugins={[Captions, Thumbnails, Share]}
+			/>
+			<div>
+				<h2>{structureName}</h2>
+				<p>{structureSlug}</p>
+				<div className='tile is-vertical'>
+					{imageNodes?.map((image, index) => {
+						console.log("image: " + image)
+						return (
+							<div
+								className='tile is-parent'
+								onClick={(event) => setIndex(index)}
+								onKeyDown={(event) => setIndex(index)}>
+								<GatsbyImage
+									alt={image.data.galleryImageLegend}
+									image={getImage(image.data.galleryImage.localFiles[0])}
+								/>
+								<p>{image.data.galleryImageLegend}</p>
+							</div>
+						)
+					})}
 				</div>
-			</Layout>
+				<hr />
+				<div>
+					<h4>LightGallery</h4>
+					<LightGallery
+						plugins={[lgShare, lgThumbnail, lgHash, lgZoom]}
+						elementClassNames='custom-class-name'
+						onInit={onInit}>
+						{getItems()}
+					</LightGallery>
+				</div>
+				<hr />
+				<pre>{JSON.stringify(data, null, 2)}</pre>
+			</div>
 		</>
 	)
 }

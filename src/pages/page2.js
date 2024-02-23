@@ -5,7 +5,11 @@ import {
 	Section,
 	SectionContentCenter,
 } from "../components/StyledElements/SectionStyled"
-
+import { N, P } from "styled-icons/fa-solid"
+import PriceTable from "../components/PriceTable/PriceTable"
+import PricePannel from "../components/PriceTable/PricePannel/PricePannel"
+import PriceList from "../components/PriceList/PriceList"
+import { PriceProvider } from "../context/priceFilter"
 const pageStyles = {
 	color: "#232129",
 	padding: 96,
@@ -30,17 +34,21 @@ const codeStyles = {
 }
 
 const TwoPage = ({ data }) => {
-	//console.log(data)
-	const tableauInit = data.nurseryMoth.nodes
-	//console.log(tableauInit)
-	let myArray = []
-	for (let i = 0; i < tableauInit.length; i++) {
-		console.log(tableauInit[i].data.fullDay)
-		myArray.push(tableauInit[i].data.fullDay)
-	}
-	console.log("myArray: " + myArray)
-	//const myArray = new Array(tableauInit.data)
-	//console.log(myArray)
+	const prestationFilter = data.filtres.nodes
+	const prixNurseryMoth = data.nurseryMoth.nodes
+
+	const prestations = [
+		...new Set(
+			prestationFilter.map((prest) => {
+				return prest
+			})
+		),
+	]
+
+	console.log("prestations page: " + prestations)
+	//console.log("priceData: " + priceData)
+	//console.log("prixNurseryMoth[0].data: " + prixNurseryMoth[0].data.prestation)
+
 	return (
 		<main style={pageStyles}>
 			<h1 style={headingStyles}>
@@ -54,8 +62,39 @@ const TwoPage = ({ data }) => {
 				Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
 				update in real-time. 😎
 			</p>
+			{/*<pre>{JSON.stringify(data, null, 4)}</pre>*/}
 			<Section>
-				<SectionContentCenter></SectionContentCenter>
+				<PriceProvider>
+					<h3>La Nurserie</h3>
+					<SectionContentCenter>
+						<div className='col1'>
+							<PriceList
+								priceData={prixNurseryMoth}
+								tablePrice={`Journée Complète`}
+							/>
+						</div>
+						<br />
+						<hr />
+						<div className='col2'>
+							<h4>Prix au jour</h4>
+							<table className='table'>
+								{prixNurseryMoth.map((item, i) => {
+									const { iD, prestation2, prestation, daysWeek, price } =
+										item.data
+									return (
+										<tr>
+											<td>{iD}</td>
+											<td>{daysWeek}</td>
+											<td>{price}</td>
+											<td>{prestation}</td>
+											<td>{prestation2}</td>
+										</tr>
+									)
+								})}
+							</table>
+						</div>
+					</SectionContentCenter>
+				</PriceProvider>
 			</Section>
 		</main>
 	)
@@ -63,18 +102,30 @@ const TwoPage = ({ data }) => {
 
 export const query = graphql`
 	query {
-		nurseryMoth: allAirtable(
-			filter: { table: { eq: "Nursery-Moth" } }
-			sort: { order: ASC, fields: id }
+		filtres: allAirtable(
+			filter: { table: { eq: "Filtres" } }
+			sort: { fields: data___iD, order: ASC }
 		) {
 			nodes {
+				recordId
 				data {
-					days_week
-					fullDay
-					morningWithMeal
-					morningWithoutMeal
-					afternoonWithMeal
-					afternoonWithoutMeal
+					name
+					NurseryMoth
+				}
+			}
+		}
+		nurseryMoth: allAirtable(
+			filter: { table: { eq: "Nursery-Moth" } }
+			sort: { fields: data___iD, order: ASC }
+		) {
+			totalCount
+			nodes {
+				data {
+					iD
+					Filtres
+					prestation
+					daysWeek
+					price
 				}
 			}
 		}
