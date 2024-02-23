@@ -6,7 +6,6 @@ import { KeyboardArrowDown, Menu, Close } from "@styled-icons/material/"
 import SubMenu from "../SubMenu/SubMenu"
 const DropDown = () => {
 	const [openMenu, setOpenMenu] = useState(false)
-	console.log(openMenu)
 	return (
 		<header className='header'>
 			<div className='wrapper'>

@@ -4,7 +4,6 @@ import { KeyboardArrowLeft, KeyboardArrowDown } from "@styled-icons/material/"
 import "./submenu.css"
 import { Link } from "gatsby"
 const SubMenu = ({ className, menu, openMenu }) => {
-	console.log("openMenu: " + openMenu)
 	return (
 		<ul className={`${className}`}>
 			{menu.subMenu.map((sub, i) => (

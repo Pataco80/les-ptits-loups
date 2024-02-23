@@ -42,6 +42,10 @@ module.exports = {
 						baseId: process.env.AIRTABLE_PRIX_DATABASE_ID,
 						tableName: `Nursery-Moth`,
 					},
+					{
+						baseId: process.env.AIRTABLE_PRIX_DATABASE_ID,
+						tableName: `Filtres`,
+					},
 				],
 			},
 		},
