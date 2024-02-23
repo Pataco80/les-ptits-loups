@@ -7,10 +7,10 @@ import SubMenu from "../SubMenu/SubMenu"
 const DropDown = () => {
 	const [openMenu, setOpenMenu] = useState(false)
 	return (
-		<header className='header'>
+		<nav className='header'>
 			<div className='wrapper'>
 				<div className='logo'>
-					<h1 className='h4'>Logo</h1>
+					<Link to='/'>Logo</Link>
 				</div>
 				<span
 					className={`shadow ${openMenu && "active"}`}
@@ -41,7 +41,7 @@ const DropDown = () => {
 					<Menu size={36} />
 				</span>
 			</div>
-		</header>
+		</nav>
 	)
 }
 

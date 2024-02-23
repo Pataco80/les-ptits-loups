@@ -14,74 +14,40 @@ export const fontFamilly = {
   "Arial",
   "sans-serif"`,
 }
-/* @link https://utopia.fyi/type/calculator?c=375,18,1.2,1240,22,1.25,5,2,&s=0.75|0.5|0.25|0.2,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-
-export const typeScale1822 = {
-	/* Step -2: 12.50px → 14.08px */
-	fontSize2xs: `clamp(0.78rem, calc(0.75rem + 0.17vw), 0.88rem)`,
-	line2xs: `clamp(0.938rem, 0.283vw + 0.881rem, 1.1rem)`,
-
-	/* Step -1: 15.00px → 17.60px */
-	fontSizeXs: `clamp(0.94rem, calc(0.88rem + 0.28vw), 1.10rem)`,
-	lineXs: `clamp(1.125rem, 0.435vw + 1.038rem, 1.375rem)`,
-
-	/* Step 0: 18.00px → 22.00px */
-	fontSizeS: `clamp(1.13rem, calc(1.02rem + 0.46vw), 1.38rem)`,
-	lineS: `clamp(1.35rem, 0.641vw + 1.222rem, 1.719rem)`,
-
-	/* Step 1: 21.60px → 27.50px */
-	fontSizeM: `clamp(1.35rem, calc(1.28rem + 0.37vw), 1.56rem);`,
-	lineM: `clamp(1.62rem, 0.579vw + 1.504rem, 1.953rem)`,
-
-	/* Step 2: 25.92px → 34.38px */
-	fontSizeL: `clamp(1.62rem, calc(1.5rem + 0.58vw), 1.95rem);`,
-	lineL: `clamp(1.944rem, 0.865vw + 1.771rem, 2.441rem)`,
-
-	/* Step 3: 31.10px → 42.97px */
-	fontSizeXl: `clamp(1.94rem, calc(1.77rem + 0.87vw), 2.44rem);`,
-	lineXl: `clamp(2.333rem, 1.251vw + 2.082rem, 3.052rem)`,
-
-	/* Step 4: 37.32px → 53.71px */
-	fontSize2Xl: `clamp(2.33rem, calc(2.08rem + 1.26vw), 3.05rem);`,
-	line2Xl: `clamp(2.799rem, 1.767vw + 2.446rem, 3.815rem)`,
-
-	/* Step 5: 44.79px → 67.14px */
-	fontSize3Xl: `clamp(2.80rem, calc(2.31rem + 2.43vw), 4.20rem)`,
-	line3Xl: `clamp(3.359rem, 3.28vw + 2.703rem, 5.245rem)`,
-}
+/* @link https://utopia.fyi/type/calculator?c=375,18,1.2,1240,22,1.333,5,2,&s=0.75|0.5|0.25|0.2,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
 export const typeScale = {
-	/* Step -2: 11.11px → 12.80px */
-	fontSize2xs: `clamp(0.6944rem, 0.6486rem + 0.1954vw, 0.8rem)`,
-	line2xs: `clamp(0.833rem, 0.308vw + 0.761rem, 1rem)`,
+	/* Step -2: 12.5px → 12.3812px */
+	fontSize2xs: `clamp(0.7738rem, 0.7845rem + -0.0137vi, 0.7813rem)`,
+	line2xs: `clamp(0.938rem, 0.182vw + 0.895rem, 1.032rem)`,
 
-	/* Step -1: 13.33px → 16.00px */
-	fontSizeXs: `clamp(0.8331rem, 0.7608rem + 0.3087vw, 1rem)`,
-	lineXs: `clamp(1rem, 0.463vw + 0.891rem, 1.25rem)`,
+	/* Step -1: 15px → 16.5041px */
+	fontSizeXs: `clamp(0.9375rem, 0.8967rem + 0.1739vi, 1.0315rem)`,
+	lineXs: `clamp(1.125rem, 0.485vw + 1.011rem, 1.375rem)`,
 
-	/* Step 0: 16.00px → 20.00px */
-	fontSizeS: `clamp(1rem, 0.8916rem + 0.4624vw, 1.25rem)`,
-	lineS: `clamp(1.2rem, 0.671vw + 1.043rem, 1.563rem)`,
+	/* Step 0: 18px → 22px */
+	fontSizeS: `clamp(1.125rem, 1.0166rem + 0.4624vi, 1.375rem)`,
+	lineS: `clamp(1.35rem, 0.936vw + 1.131rem, 1.833rem)`,
 
-	/* Step 1: 19.20px → 25.00px */
-	fontSizeM: `clamp(1.2rem, 1.0428rem + 0.6705vw, 1.5625rem)`,
-	lineM: `clamp(1.44rem, 0.949vw + 1.218rem, 1.953rem)`,
+	/* Step 1: 21.6px → 29.326px */
+	fontSizeM: `clamp(1.35rem, 1.1407rem + 0.8932vi, 1.8329rem)`,
+	lineM: `clamp(1.62rem, 1.597vw + 1.246rem, 2.443rem)`,
 
-	/* Step 2: 23.04px → 31.25px */
-	fontSizeL: `clamp(1.44rem, 1.2175rem + 0.9491vw, 1.9531rem)`,
-	lineL: `clamp(1.728rem, 1.32vw + 1.419rem, 2.441rem)`,
+	/* Step 2: 25.92px → 39.0916px */
+	fontSizeL: `clamp(1.62rem, 1.2631rem + 1.5227vi, 2.4432rem)`,
+	lineL: `clamp(1.944rem, 2.546vw + 1.347rem, 3.257rem)`,
 
-	/* Step 3: 27.65px → 39.06px */
-	fontSizeXl: `clamp(1.7281rem, 1.419rem + 1.3191vw, 2.4413rem)`,
-	lineXl: `clamp(2.074rem, 1.809vw + 1.65rem, 3.052rem)`,
+	/* Step 3: 31.104px → 52.109px */
+	fontSizeXl: `clamp(1.944rem, 1.3749rem + 2.4283vi, 3.2568rem)	`,
+	lineXl: `clamp(2.333rem, 3.895vw + 1.42rem, 4.341rem)`,
 
-	/* Step 4: 33.18px → 48.83px */
-	fontSize2Xl: `clamp(2.0738rem, 1.6497rem + 1.8092vw, 3.0519rem)`,
-	line2Xl: `clamp(2.488rem, 2.453vw + 1.913rem, 3.815rem)`,
+	/* Step 4: 37.3248px → 69.4614px */
+	fontSize2Xl: `clamp(2.3328rem, 1.462rem + 3.7152vi, 4.3413rem)`,
+	line2Xl: `clamp(2.799rem, 5.794vw + 1.441rem, 5.787rem)`,
 
-	/* Step 5: 39.81px → 61.04px */
-	fontSize3Xl: `clamp(2.4881rem, 1.9129rem + 2.4543vw, 3.815rem)`,
-	line3Xl: `clamp(2.986rem, 3.298vw + 2.213rem, 4.769rem)`,
+	/* Step 5: 44.7898px → 92.592px */
+	fontSize3Xl: `clamp(2.7994rem, 1.5041rem + 5.5263vi, 5.787rem)`,
+	line3Xl: `clamp(3.359rem, 8.446vw + 1.38rem, 7.714rem)`,
 }
 
 export const globalTypography = css`
@@ -97,7 +63,7 @@ export const globalTypography = css`
 	.h5,
 	h6,
 	.h6 {
-		color: ${setColor.primaryColor};
+		color: ${setColor.purple};
 		font-family: ${fontFamilly.titleFont};
 		${setLetterSpacing()};
 	}

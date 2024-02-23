@@ -1,6 +1,15 @@
 import { generateMedia } from "styled-media-query"
 
 export const setColor = {
+	purple: "#8d4592",
+	purpleL10: "#ab59b1",
+	purpleL20: "#bd7cc1",
+	purpleL30: "#ce9fd1",
+	purpleL40: "#e0c1e2",
+	purpleD10: "#6c356f",
+	purpleD20: "#4a244d",
+	orange: "#f9a542",
+	orangeD10: "#f78d11",
 	accentColor: "red",
 	mainWhite: "#ffffff",
 	mainBlack: "#272727",
@@ -124,4 +133,53 @@ export const setFlex = ({
 
 export const setLetterSpacing = (number = 3.2) => {
 	return `letter-spacing: ${setPxToRem(number)}`
+}
+
+export const setTransition = ({
+	property = "all",
+	duration = 0.3,
+	timing = "linear",
+	delayTime = 0,
+} = {}) => {
+	return `
+    transition-property: ${property};
+    transition-duration: ${duration}s;
+    transition-timing-function:${timing};
+    transition-delay: ${delayTime}s;
+  `
+}
+
+export const setRadius = ({
+	allPx = null,
+	allPc = null,
+	radius = 4,
+	tl = radius,
+	tr = radius,
+	bl = radius,
+	br = radius,
+} = {}) => {
+	if (allPx) {
+		return `
+    border-radius: ${setPxToRem(allPx)};
+    `
+	} else if (allPc) {
+		return `
+    border-radius: ${allPc}%;
+    `
+	} else {
+		return `
+    border-top-left-radius: ${setPxToRem(tl)};
+    border-top-right-radius: ${setPxToRem(tr)};
+    border-bottom-left-radius: ${setPxToRem(bl)};
+    border-bottom-right-radius: ${setPxToRem(br)};
+  `
+	}
+}
+
+export const setBorder = ({
+	size = 2,
+	style = "solid",
+	color = "transparent",
+} = {}) => {
+	return `${setPxToRem(size)} ${style} ${color}`
 }

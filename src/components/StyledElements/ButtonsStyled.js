@@ -63,17 +63,17 @@ const ButtonStyles = css`
   ${({ primary }) =>
 		primary &&
 		`
-    color: ${setColor.mainWhite};
-    border: ${setBorder({ color: `${setColor.primaryColor}` })};
-    background: ${setColor.primaryColor};
+    color: ${setColor.orange};
+    border: ${setBorder({ color: `${setColor.purple}` })};
+    background: ${setColor.purple};
   `}
 
   ${({ secondary }) =>
 		secondary &&
 		`
-    color: ${setColor.primaryColor};
-    border: ${setBorder({ color: setColor.mainWhite })};
-    background: ${setColor.mainWhite};
+    color: ${setColor.purple};
+    border: ${setBorder({ color: setColor.orange })};
+    background: ${setColor.orange};
   `}
 
   ${({ primaryOutline }) =>
@@ -94,9 +94,9 @@ const ButtonStyles = css`
 		${({ primary, secondary, primaryOutline }) =>
 			(primary || secondary || primaryOutline) &&
 			`
-      color: ${setColor.mainWhite};
-      border: ${setBorder({ color: `${setColor.primaryColorD1}` })};
-      background: ${setColor.primaryColorD1};
+      color: ${setColor.orange};
+      border: ${setBorder({ color: `${setColor.purpleD20}` })};
+      background: ${setColor.purpleD20};
     `}
 
 		${({ outline }) =>

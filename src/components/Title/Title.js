@@ -6,26 +6,13 @@ import * as S from "./TitleStyled"
 
 // Component
 const Title = (props) => {
-	const {
-		title,
-		tag: Tag,
-		hidden,
-		children,
-		tagClassName,
-		pageTitle,
-		mBtm,
-	} = props
+	const { title, tag: Tag, hidden, centerText, children, className } = props
 	// Render Component
 	return (
 		<S.TitleWrapper>
-			<Tag
-				pageTitle={pageTitle}
-				className={tagClassName}
-				mBtm={mBtm}
-				hidden={hidden}>
-				{title}
+			<Tag className={className} hidden={hidden} centerText={centerText}>
+				{title?.title || children}
 			</Tag>
-			{children}
 		</S.TitleWrapper>
 	)
 }
@@ -38,7 +25,7 @@ Title.defaultProps = {
 
 Title.propTypes = {
 	tag: PropTypes.string.isRequired,
-	title: PropTypes.string.isRequired,
+	title: PropTypes.string,
 }
 
 export default Title
