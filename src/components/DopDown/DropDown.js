@@ -38,7 +38,9 @@ const DropDown = () => {
 					</li>
 				) : (
 					<li key={index} className='menu_list'>
-						<Link to={menu.path}>{menu.label}</Link>
+						<Link to={menu.path} onClick={() => setOpenMenu(false)}>
+							{menu.label}
+						</Link>
 					</li>
 				)}
 			</>
