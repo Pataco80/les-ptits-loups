@@ -10,8 +10,6 @@ const DropDown = () => {
 	console.log("openMenu: " + openMenu)
 	console.log("openSubMenu: " + openSubMenu)
 
-	const toggleSubMenu = () => setOpenSubMenu(!openSubMenu)
-
 	const MenuItem = ({ menu, index }) => {
 		return (
 			<>
@@ -20,8 +18,9 @@ const DropDown = () => {
 						key={index}
 						className='menu_list'
 						onMouseEnter={() => setOpenSubMenu(true)}
-						onMouseLeave={() => setOpenSubMenu(false)}>
-						<Link to={menu.path} onClick={toggleSubMenu}>
+						onMouseLeave={() => setOpenSubMenu(false)}
+						onClick={() => setOpenSubMenu(!openSubMenu)}>
+						<Link to={menu.path}>
 							{menu.label}
 							{menu.subMenu && (
 								<span>
@@ -39,9 +38,7 @@ const DropDown = () => {
 					</li>
 				) : (
 					<li key={index} className='menu_list'>
-						<Link to={menu.path} onClick={toggleSubMenu}>
-							{menu.label}
-						</Link>
+						<Link to={menu.path}>{menu.label}</Link>
 					</li>
 				)}
 			</>
@@ -75,30 +72,3 @@ const DropDown = () => {
 }
 
 export default DropDown
-
-/**
- * 					{linksMenu.map((menu, i) => (
-						<li
-							key={i}
-							className='menu_list'
-							onMouseEnter={() => setOpenSubMenu(true)}
-							onMouseLeave={toggleSubMenu}>
-							<Link to={menu.path} onClick={toggleSubMenu}>
-								{menu.label}
-								{menu.subMenu && (
-									<span>
-										<KeyboardArrowDown size={24} />
-									</span>
-								)}
-							</Link>
-
-							{menu.subMenu && (
-								<SubMenu
-									menu={menu}
-									className={openSubMenu ? `openSubMenu menu` : `menu`}
-									openMenu={openSubMenu}
-								/>
-							)}
-						</li>
-					))}
- */
