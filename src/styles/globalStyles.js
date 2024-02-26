@@ -16,6 +16,8 @@ ${reset};
     font-family: ${fontFamilly.defaultFonts};
     font-size: 1rem;
     color: ${setColor.mainBlack};
+    width: 100%;
+    overflow-x: hidden;
   }
 
   body {
