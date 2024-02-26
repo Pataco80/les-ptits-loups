@@ -2,6 +2,8 @@
 	background-color: #272727;
 	color: #fff;
 	padding: 1rem 0;
+	position: relative;
+	z-index: 1000;
 }
 
 .header .wrapper {
@@ -73,7 +75,8 @@
 	transition: all 0.3s ease-in-out;
 }
 
-.navigation .menu_list:hover .menu {
+.navigation .menu_list .menu.openSubMenu,
+.navigation.menu_list .menu:hover {
 	transform: translateY(0);
 	top: 100%;
 	visibility: visible;
@@ -194,7 +197,7 @@
 		display: none;
 	}
 
-	.navigation .menu_list:hover .menu {
+	.navigation .menu_list .menu.openSubMenu {
 		display: flex;
 		flex-direction: column;
 		position: relative;
